@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nude Divine Studio — Kosmetik in Ketsch</title>
+<meta name="description" content="Gesichts-Lymphdrainage, Aquafacial, Liftings, Japanese Headspa und Wimpern in Ketsch am Rhein. Kleines Studio, volle Zeit für deine Haut.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..600,0..100,0..1;1,9..144,300..500,0..100,0..1&family=Karla:ital,wght@0,300..700;1,300..500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   NUDE DIVINE STUDIO — Richtung A: "HAUT"
+   Warm nude / editorial. Signatur: Hauttöne-Leiter als Index.
+   ============================================================ */
+
+:root{
+  --sand:      #F1E4D5;
+  --sand-deep: #E6D3BF;
+  --paper:     #FBF5EC;
+  --ink:       #2C2018;
+  --ink-soft:  #6E5A4A;
+  --plum:      #7A4B56;
+  --plum-deep: #5C3641;
+  --line:      rgba(44,32,24,.15);
+
+  /* Hauttöne — die Signatur der Seite */
+  --t1:#F4DEC9; --t2:#E9C4A6; --t3:#D8A382;
+  --t4:#BB8163; --t5:#8F5D45; --t6:#5D392B;
+
+  --tone: var(--t2);           /* wird pro Sektion gesetzt */
+
+  --sp-1:.5rem; --sp-2:1rem; --sp-3:1.5rem; --sp-4:2.5rem;
+  --sp-5:4rem;  --sp-6:6rem;  --sp-7:9rem;
+
+  --max: 1240px;
+  --ease: cubic-bezier(.22,.61,.36,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;background:var(--sand);color:var(--ink);
+  font-family:"Karla",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:1.0625rem;line-height:1.65;font-weight:400;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--plum);outline-offset:3px;border-radius:2px}
+
+.wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:clamp(1.25rem,5vw,3.5rem)}
+
+/* ---------- Typografie ---------- */
+.display{
+  font-family:"Fraunces",Georgia,serif;
+  font-variation-settings:"opsz" 144,"SOFT" 40,"WONK" 1;
+  font-weight:300;line-height:.94;letter-spacing:-.02em;
+  margin:0;
+}
+h1.display{font-size:clamp(2.9rem,9.5vw,7.2rem)}
+h2.display{font-size:clamp(2.1rem,5.2vw,4rem);line-height:1}
+h3{font-family:"Fraunces",Georgia,serif;font-variation-settings:"opsz" 40,"SOFT" 30;
+   font-weight:400;font-size:1.5rem;line-height:1.15;margin:0;letter-spacing:-.01em}
+.ital{font-style:italic;font-variation-settings:"opsz" 144,"SOFT" 60,"WONK" 1}
+.eyebrow{
+  font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--ink-soft);margin:0 0 var(--sp-3);display:flex;align-items:center;gap:.7rem;
+}
+.eyebrow::before{content:"";width:2.2rem;height:1px;background:var(--tone);flex:none}
+.lead{font-size:clamp(1.1rem,1.9vw,1.3rem);line-height:1.6;color:var(--ink-soft);max-width:46ch}
+.small{font-size:.85rem;color:var(--ink-soft)}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  min-height:52px;padding:.9rem 1.7rem;border-radius:999px;
+  text-decoration:none;font-weight:600;font-size:.95rem;letter-spacing:.01em;
+  border:1px solid transparent;transition:background .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease),transform .25s var(--ease);
+}
+.btn-primary{background:var(--ink);color:var(--paper)}
+.btn-primary:hover{background:var(--plum);transform:translateY(-2px)}
+.btn-ghost{border-color:var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--ink);background:rgba(44,32,24,.05)}
+.btn svg{width:16px;height:16px;flex:none}
+
+/* ---------- Nav: schwebende Kapsel ---------- */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:80;pointer-events:none;
+  padding:clamp(.55rem,1.5vw,1.15rem) clamp(.7rem,4vw,2rem) 0;
+}
+.navbar{
+  position:relative;pointer-events:auto;
+  display:flex;align-items:center;gap:1rem;
+  width:100%;max-width:1180px;margin-inline:auto;
+  padding:.45rem .45rem .45rem 1.35rem;
+  border-radius:999px;
+  background:rgba(251,245,236,.62);
+  border:1px solid rgba(44,32,24,.08);
+  box-shadow:0 1px 2px rgba(44,32,24,.04), 0 14px 34px -20px rgba(44,32,24,.4);
+  backdrop-filter:blur(18px) saturate(1.4);
+  -webkit-backdrop-filter:blur(18px) saturate(1.4);
+  transition:max-width .55s var(--ease),background .35s var(--ease),
+             box-shadow .35s var(--ease),border-color .35s var(--ease);
+}
+.nav.stuck .navbar{
+  max-width:1000px;background:rgba(251,245,236,.88);
+  border-color:rgba(44,32,24,.12);
+  box-shadow:0 1px 2px rgba(44,32,24,.05), 0 20px 44px -24px rgba(44,32,24,.55);
+}
+.brand{font-family:"Fraunces",serif;font-variation-settings:"opsz" 40,"SOFT" 20;
+  font-weight:400;font-size:1rem;letter-spacing:.14em;text-transform:uppercase;
+  text-decoration:none;white-space:nowrap;flex:0 0 auto;
+  display:inline-flex;align-items:center;min-height:44px}
+.brand span{color:var(--plum)}
+
+.nav-links{display:none;position:absolute;left:50%;transform:translateX(-50%);
+  gap:1.7rem;font-size:.92rem;white-space:nowrap}
+.nav-links a{text-decoration:none;color:var(--ink-soft);transition:color .2s;
+  display:inline-flex;align-items:center;min-height:40px}
+.nav-links a:hover{color:var(--ink)}
+@media(min-width:1000px){.nav-links{display:flex}}
+
+.nav-right{margin-left:auto;display:flex;align-items:center;gap:.45rem;flex:0 0 auto}
+.nav-right .btn{min-height:44px;padding:.55rem 1.3rem;font-size:.9rem}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;
+  background:rgba(255,255,255,.5)}
+.lang button{
+  border:0;background:transparent;color:var(--ink-soft);
+  padding:.35rem .68rem;font-size:.72rem;font-weight:700;letter-spacing:.1em;
+  min-height:40px;transition:background .2s,color .2s;
+}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+
+.burger{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;
+  width:44px;height:44px;flex:0 0 auto;
+  border:0;background:transparent;border-radius:50%;transition:background .2s}
+.burger:hover{background:rgba(44,32,24,.06)}
+.burger i{display:block;width:17px;height:1.5px;background:var(--ink);border-radius:2px;
+  transition:transform .32s var(--ease),opacity .2s var(--ease)}
+.burger[aria-expanded="true"] i:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.burger[aria-expanded="true"] i:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] i:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+@media(min-width:1000px){.burger{display:none}}
+@media(max-width:999px){
+  .navbar{padding:.4rem .4rem .4rem 1rem;gap:.5rem;background:rgba(251,245,236,.8)}
+  .nav.stuck .navbar{background:rgba(251,245,236,.93)}
+  .brand{font-size:.86rem;letter-spacing:.07em}
+  .navbar .lang{display:none}
+  .nav-right{gap:.3rem}
+  .nav-right .btn{padding:.5rem 1rem;font-size:.82rem;min-height:42px}
+}
+
+.mobnav{pointer-events:auto;width:100%;max-width:1180px;margin:.45rem auto 0;
+  overflow:hidden;max-height:0;opacity:0;
+  transition:max-height .4s var(--ease),opacity .3s var(--ease)}
+.mobnav.open{max-height:40rem;opacity:1}
+.mobnav-card{padding:.4rem;border-radius:26px;
+  background:rgba(251,245,236,.94);border:1px solid rgba(44,32,24,.09);
+  box-shadow:0 20px 44px -24px rgba(44,32,24,.55);
+  backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4)}
+.mobnav-card > a{display:flex;align-items:center;justify-content:space-between;
+  min-height:50px;padding:0 1.1rem;border-radius:20px;text-decoration:none;
+  font-size:1.05rem;color:var(--ink);transition:background .2s var(--ease)}
+.mobnav-card > a:hover,.mobnav-card > a:focus-visible{background:var(--sand)}
+.mobnav-card > a::after{content:"→";color:var(--ink-soft);font-size:.95rem}
+.mobnav-cta{padding:.5rem .4rem .1rem}
+.mobnav-cta .btn{width:100%}
+.mobnav-foot{display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  margin-top:.4rem;padding:.7rem 1.1rem .5rem;border-top:1px solid var(--line)}
+.mobnav-foot span{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)}
+.mobnav-foot .lang{display:flex}
+@media(min-width:1000px){.mobnav{display:none}}
+
+/* ---------- Hauttöne-Leiter (Signatur) ---------- */
+.ladder{
+  position:fixed;right:clamp(.75rem,2vw,1.6rem);top:50%;transform:translateY(-50%);
+  z-index:50;display:none;flex-direction:column;gap:.5rem;
+}
+@media(min-width:1240px){.ladder{display:flex}}
+.ladder a{
+  display:flex;align-items:center;justify-content:flex-end;gap:.7rem;
+  text-decoration:none;color:var(--ink-soft);font-size:.75rem;letter-spacing:.14em;min-height:40px;
+  text-transform:uppercase;
+}
+.ladder .dot{
+  width:34px;height:6px;border-radius:99px;background:var(--c);
+  opacity:.42;transition:opacity .3s var(--ease),width .3s var(--ease),height .3s var(--ease);
+}
+.ladder .lbl{opacity:0;transform:translateX(6px);transition:opacity .3s var(--ease),transform .3s var(--ease);white-space:nowrap}
+.ladder a:hover .lbl,.ladder a:focus-visible .lbl{opacity:1;transform:none}
+.ladder a[aria-current="true"] .dot{opacity:1;width:52px;height:10px}
+.ladder a[aria-current="true"] .lbl{opacity:1;transform:none;color:var(--ink)}
+
+/* ---------- Hero: Video als Hintergrund ---------- */
+.hero{
+  position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;
+  padding:calc(var(--sp-7) + 1rem) 0 var(--sp-6);
+}
+.hero > .wrap{width:100%;position:relative;z-index:1}
+.hero-copy{max-width:min(44rem,56vw)}
+
+.hero-media{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.hero-media .ph,.hero-media .media{
+  position:absolute;inset:0;width:100%;height:100%;
+  aspect-ratio:auto;border-radius:0;object-fit:cover;display:block;
+}
+.hero-media::after{
+  content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(180deg, rgba(241,228,213,.88) 0%, rgba(241,228,213,0) 20%),
+    linear-gradient(0deg,   rgba(241,228,213,.96) 0%, rgba(241,228,213,0) 24%),
+    linear-gradient(90deg,
+      rgba(241,228,213,.97) 0%,
+      rgba(241,228,213,.93) 32%,
+      rgba(241,228,213,.58) 60%,
+      rgba(241,228,213,.22) 100%);
+}
+.hero .lead{color:#5B4A3D}
+.hero-meta{color:var(--ink)}
+
+@media(max-width:959px){
+  .hero{min-height:92svh;padding-top:9rem;padding-bottom:var(--sp-5)}
+  .hero-copy{max-width:none}
+  .hero-media::after{
+    background:linear-gradient(178deg,
+      rgba(241,228,213,.95) 0%,
+      rgba(241,228,213,.80) 26%,
+      rgba(241,228,213,.42) 62%,
+      rgba(241,228,213,.88) 100%);
+  }
+}
+
+/* Hero: Platz fuer die fixierte Aktionsleiste unten */
+@media(max-width:899px){
+  .hero{padding-bottom:calc(var(--sp-5) + 4.5rem)}
+}
+
+/* Flache Fenster: Telefon quer, kleine Notebooks */
+@media(max-height:560px) and (orientation:landscape){
+  .hero{min-height:auto;padding-top:7rem;padding-bottom:3.5rem}
+  h1.display{font-size:clamp(2.2rem,6.5vw,3.4rem)}
+  .hero .lead{font-size:1rem}
+  .hero-cta{margin-top:1.5rem}
+  .hero-meta{margin-top:1rem!important}
+  .sec{padding:3.5rem 0}
+  .modal-card{padding:1.4rem}
+  .modal-card h2{font-size:1.6rem}
+  .modal-card .lead{font-size:.95rem}
+  .modal-opts{margin-top:1.1rem;gap:.4rem}
+  .opt{min-height:58px}
+  .mobnav.open{max-height:min(40rem,70svh);overflow-y:auto}
+}
+
+/* Tonband als eigener Streifen unter dem Hero */
+.toneband-strip{position:relative;z-index:1;padding:var(--sp-5) 0 var(--sp-6)}
+
+h1.display .ln{display:block;overflow:hidden}
+h1.display .ln > span{display:block;transform:translateY(105%);animation:rise .95s var(--ease) forwards}
+h1.display .ln:nth-child(2) > span{animation-delay:.1s}
+h1.display .ln:nth-child(3) > span{animation-delay:.2s}
+@keyframes rise{to{transform:none}}
+.hero-sub{margin-top:var(--sp-3);opacity:0;animation:fade .8s var(--ease) .5s forwards}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:var(--sp-4);opacity:0;animation:fade .8s var(--ease) .65s forwards}
+@keyframes fade{to{opacity:1}}
+
+/* Tonband unter dem Hero */
+.toneband{display:flex;height:clamp(64px,9vw,110px);border-radius:4px;overflow:hidden;margin-top:var(--sp-5);
+  opacity:0;animation:fade 1s var(--ease) .8s forwards}
+.toneband i{flex:1;transition:flex .5s var(--ease)}
+.toneband:hover i{flex:.8}
+.toneband i:hover{flex:2.2}
+.hero-meta{display:flex;flex-wrap:wrap;gap:var(--sp-3) var(--sp-4);margin-top:var(--sp-3);
+  font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+/* Telefon: eine einzige, ruhige Zeile */
+@media(max-width:959px){
+  .hero-meta{
+    flex-wrap:nowrap;white-space:nowrap;gap:0;
+    font-size:.75rem;letter-spacing:.1em;color:var(--ink);
+  }
+  .hero-meta span:nth-child(n+3){display:none}
+  .hero-meta span:first-child::after{content:"\00b7";margin:0 .55rem;opacity:.55}
+}
+
+/* ---------- Sektionen ---------- */
+section{scroll-margin-top:5rem}
+.sec{padding:var(--sp-6) 0;position:relative;z-index:1}
+.sec--paper{background:var(--paper)}
+.sec--deep{background:var(--sand-deep)}
+.sec--deep .ph{--tone:var(--t4)}
+.sec-head{display:grid;gap:var(--sp-3);margin-bottom:var(--sp-5)}
+@media(min-width:900px){.sec-head{grid-template-columns:1fr 1fr;align-items:end;gap:var(--sp-5)}}
+
+/* Bildflächen */
+.ph{
+  position:relative;border-radius:3px;overflow:hidden;background:var(--sand-deep);
+  background-image:
+    radial-gradient(120% 90% at 20% 10%, color-mix(in oklab, var(--tone) 85%, white) 0%, transparent 60%),
+    radial-gradient(100% 80% at 85% 90%, color-mix(in oklab, var(--tone) 70%, var(--ink)) 0%, transparent 65%),
+    linear-gradient(160deg, var(--paper), var(--sand-deep));
+}
+.ph > img{width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit}
+.ph.tall{aspect-ratio:3/4}
+.ph.wide{aspect-ratio:4/3}
+.ph.sq{aspect-ratio:1}
+
+/* Studio */
+.studio{display:grid;gap:var(--sp-4)}
+@media(min-width:900px){.studio{grid-template-columns:.9fr 1.1fr;gap:var(--sp-5);align-items:center}}
+
+/* Behandlungen */
+.treatments{display:grid;gap:1px;background:var(--line);border-block:1px solid var(--line)}
+@media(min-width:760px){.treatments{grid-template-columns:1fr 1fr}}
+.tr{
+  background:var(--sand);padding:var(--sp-4) var(--sp-3);display:grid;
+  grid-template-columns:auto 1fr;gap:var(--sp-3);align-items:start;
+  transition:background .3s var(--ease);
+}
+.tr:hover{background:var(--paper)}
+.tr .swatch{width:14px;height:56px;border-radius:99px;background:var(--c)}
+.tr h3{margin-bottom:.4rem}
+.tr p{margin:0;color:var(--ink-soft);font-size:.95rem}
+.tr .meta{margin-top:.8rem;display:flex;gap:1.1rem;font-size:.74rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-soft)}
+
+/* Ritual / Aquafacial */
+.ritual{--tone:var(--t3);background:var(--paper);border-radius:6px;padding:var(--sp-5) var(--sp-4);
+  box-shadow:0 24px 60px -40px rgba(44,32,24,.5)}
+.steps{counter-reset:s;display:grid;gap:var(--sp-3);margin-top:var(--sp-4)}
+@media(min-width:820px){.steps{grid-template-columns:repeat(4,1fr);gap:var(--sp-3)}}
+.step{padding-top:var(--sp-3);border-top:2px solid var(--tone)}
+.step b{display:block;font-family:"Fraunces",serif;font-variation-settings:"opsz" 24;
+  font-weight:400;font-size:1.15rem;margin-bottom:.3rem}
+.step p{margin:0;font-size:.92rem;color:var(--ink-soft)}
+.step .n{font-size:.75rem;letter-spacing:.18em;color:var(--ink-soft);display:block;margin-bottom:.5rem}
+
+/* Galerie */
+.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--sp-2)}
+@media(min-width:860px){.gal{grid-template-columns:repeat(4,1fr);gap:var(--sp-3)}
+  .gal .ph:nth-child(1){grid-row:span 2;aspect-ratio:3/5}
+  .gal .ph:nth-child(4){grid-row:span 2;aspect-ratio:3/5}}
+
+/* Stimmen */
+.quotes{display:grid;gap:var(--sp-3)}
+@media(min-width:820px){.quotes{grid-template-columns:repeat(3,1fr)}}
+.quote{background:var(--paper);padding:var(--sp-4) var(--sp-3);border-radius:4px;display:flex;flex-direction:column;gap:var(--sp-2)}
+.quote blockquote{margin:0;font-family:"Fraunces",serif;font-variation-settings:"opsz" 40,"SOFT" 40;
+  font-weight:300;font-size:1.2rem;line-height:1.35}
+.quote cite{font-style:normal;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-top:auto}
+/* Über mich */
+.about{display:grid;gap:var(--sp-4)}
+@media(min-width:920px){.about{grid-template-columns:.85fr 1.15fr;gap:var(--sp-5);align-items:start}}
+.about p{color:var(--ink-soft)}
+.promises{list-style:none;margin:var(--sp-4) 0 0;padding:0;display:grid;gap:var(--sp-3)}
+.promises li{padding-top:var(--sp-2);border-top:1px solid var(--line);
+  font-family:"Fraunces",Georgia,serif;font-variation-settings:"opsz" 40,"SOFT" 40;
+  font-weight:400;font-size:1.15rem;line-height:1.35;color:var(--ink)}
+.sig{margin-top:var(--sp-4);padding-top:var(--sp-3);border-top:1px solid var(--line);
+  display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap}
+.sig b{font-family:"Fraunces",Georgia,serif;font-variation-settings:"opsz" 144,"SOFT" 60,"WONK" 1;
+  font-style:italic;font-weight:400;font-size:1.6rem;line-height:1;color:var(--plum)}
+.sig span{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+
+/* Gutschein */
+.gut{margin-top:var(--sp-4);background:var(--paper);border-radius:4px;padding:var(--sp-3);
+  border-left:3px solid var(--tone)}
+.gut b{display:block;font-family:"Fraunces",Georgia,serif;font-variation-settings:"opsz" 24;
+  font-weight:400;font-size:1.2rem;margin-bottom:.3rem}
+.gut p{margin:0;font-size:.94rem;color:var(--ink-soft)}
+
+/* Boutique */
+.boutique{display:grid;gap:var(--sp-4);align-items:center}
+@media(min-width:900px){.boutique{grid-template-columns:1.1fr .9fr;gap:var(--sp-5)}}
+
+/* FAQ */
+.faq{border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{
+  list-style:none;cursor:pointer;padding:1.35rem 0;display:flex;justify-content:space-between;
+  align-items:center;gap:var(--sp-3);font-size:1.05rem;font-weight:500;min-height:56px;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:"Fraunces",serif;font-size:1.5rem;color:var(--plum);
+  transition:transform .3s var(--ease);line-height:1}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq p{margin:0 0 1.35rem;color:var(--ink-soft);max-width:62ch}
+
+/* Kontakt */
+.contact{display:grid;gap:var(--sp-4)}
+@media(min-width:900px){.contact{grid-template-columns:1fr 1fr;gap:var(--sp-5)}}
+.cinfo dl{margin:var(--sp-4) 0 0;display:grid;gap:var(--sp-3)}
+.cinfo dt{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)}
+.cinfo dd{margin:.25rem 0 0;font-size:1.05rem}
+.cinfo dd a{text-decoration:none;border-bottom:1px solid var(--tone);
+  display:inline-flex;align-items:center;min-height:44px}
+.cinfo dd a:hover{border-color:var(--ink)}
+.hours{display:grid;gap:.35rem;font-size:.98rem}
+.hours div{display:flex;justify-content:space-between;gap:1rem;border-bottom:1px dotted var(--line);padding-bottom:.35rem}
+
+/* Footer */
+footer{border-top:1px solid var(--line);padding:var(--sp-4) 0 7rem;font-size:.85rem;color:var(--ink-soft)}
+.fgrid{display:flex;flex-wrap:wrap;gap:var(--sp-3) var(--sp-4);justify-content:space-between;align-items:center}
+footer a{text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
+footer a:hover{text-decoration:underline}
+
+/* Sticky Mobil-CTA */
+.mobar{
+  position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:.5rem;
+  padding:.6rem .8rem calc(.6rem + env(safe-area-inset-bottom));
+  background:rgba(251,245,236,.95);backdrop-filter:blur(12px);border-top:1px solid var(--line);
+}
+.mobar .btn{flex:1;padding:.8rem 1rem;font-size:.9rem}
+@media(min-width:900px){.mobar{display:none}footer{padding-bottom:var(--sp-4)}}
+
+/* ---------- Lebender Hintergrund ---------- */
+.bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.bg i{position:absolute;border-radius:50%;filter:blur(80px);will-change:transform}
+.bg i:nth-child(1){width:52vw;height:52vw;left:-12vw;top:-10vw;
+  background:radial-gradient(circle,rgba(233,196,166,.62),rgba(233,196,166,0) 68%);
+  animation:float1 34s ease-in-out infinite alternate}
+.bg i:nth-child(2){width:44vw;height:44vw;right:-10vw;top:38vh;
+  background:radial-gradient(circle,rgba(244,222,201,.75),rgba(244,222,201,0) 70%);
+  animation:float2 27s ease-in-out infinite alternate}
+.bg i:nth-child(3){width:58vw;height:58vw;left:26vw;bottom:-24vw;
+  background:radial-gradient(circle,rgba(216,163,130,.34),rgba(216,163,130,0) 70%);
+  animation:float1 41s ease-in-out infinite alternate-reverse}
+@keyframes float1{to{transform:translate3d(7vw,6vh,0) scale(1.14)}}
+@keyframes float2{to{transform:translate3d(-8vw,-5vh,0) scale(.88)}}
+main,footer{position:relative;z-index:1}
+
+/* ---------- Sprachwechsel-Schleier ---------- */
+.veil{
+  position:fixed;inset:0;z-index:200;display:grid;place-items:center;
+  background:var(--sand);opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .34s var(--ease),visibility .34s var(--ease);
+}
+.veil.on{opacity:1;visibility:visible;pointer-events:auto}
+.veil-in{display:flex;flex-direction:column;align-items:center;gap:1.1rem}
+.veil-word{font-family:"Fraunces",serif;font-variation-settings:"opsz" 40,"SOFT" 20;
+  font-size:1rem;letter-spacing:.36em;text-transform:uppercase;color:var(--ink-soft)}
+.veil-bar{display:block;width:min(200px,44vw);height:2px;background:var(--line);overflow:hidden}
+.veil-bar i{display:block;height:100%;width:0;background:var(--plum)}
+.veil.on .veil-bar i{animation:fill .78s var(--ease) forwards}
+@keyframes fill{to{width:100%}}
+
+/* ---------- Modal: Termin ---------- */
+.modal{position:fixed;inset:0;z-index:150;display:grid;place-items:center;
+  padding:1.25rem;opacity:0;visibility:hidden;
+  transition:opacity .3s var(--ease),visibility .3s var(--ease)}
+.modal.on{opacity:1;visibility:visible}
+.modal-bg{position:absolute;inset:0;background:rgba(44,32,24,.42);backdrop-filter:blur(6px)}
+.modal-card{
+  position:relative;width:min(520px,100%);max-height:88svh;overflow-y:auto;
+  background:var(--paper);border-radius:6px;padding:clamp(1.6rem,4vw,2.6rem);
+  box-shadow:0 30px 70px -30px rgba(44,32,24,.5);
+  transform:translateY(18px) scale(.97);transition:transform .38s var(--ease)}
+.modal.on .modal-card{transform:none}
+.modal-x{position:absolute;top:.6rem;right:.6rem;width:44px;height:44px;display:grid;place-items:center;
+  border:0;background:transparent;color:var(--ink-soft);border-radius:50%;transition:background .2s,color .2s}
+.modal-x:hover{background:var(--sand-deep);color:var(--ink)}
+.modal-x svg{width:18px;height:18px}
+.modal-card h2{font-size:clamp(1.8rem,4.5vw,2.5rem)}
+.modal-card .lead{font-size:1rem;margin:.9rem 0 0}
+.modal-opts{display:grid;gap:.55rem;margin-top:1.8rem}
+.opt{
+  display:flex;align-items:center;gap:1rem;min-height:66px;padding:.9rem 1.1rem;
+  border:1px solid var(--line);border-radius:4px;text-decoration:none;background:var(--sand);
+  transition:border-color .22s var(--ease),background .22s var(--ease),transform .22s var(--ease)}
+.opt:hover{border-color:var(--ink);transform:translateX(3px)}
+.opt .ic{width:38px;height:38px;flex:none;border-radius:50%;display:grid;place-items:center;
+  background:var(--c,var(--t2));color:var(--ink)}
+.opt .ic svg{width:19px;height:19px}
+.opt b{display:block;font-weight:600;font-size:1rem;line-height:1.2}
+.opt span{display:block;font-size:.83rem;color:var(--ink-soft)}
+.opt .go{margin-left:auto;color:var(--ink-soft);font-size:1.2rem;line-height:1}
+.modal-foot{margin:1.4rem 0 0;font-size:.82rem;color:var(--ink-soft);
+  border-top:1px solid var(--line);padding-top:1rem}
+
+/* ---------- FAQ: weiches Auf und Zu ---------- */
+.faq-body{overflow:hidden;transition:height .42s var(--ease),opacity .3s var(--ease)}
+.faq details:not([open]) .faq-body{opacity:0}
+.faq details[open] .faq-body{opacity:1}
+
+/* Scroll-Reveal */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-delay:0ms!important;transition-duration:.001ms!important}
+  .rv{opacity:1;transform:none}
+  h1.display .ln > span{transform:none}
+  .hero-sub,.hero-cta,.toneband{opacity:1}
+  .bg i{animation:none!important}
+  .faq-body{transition:none!important;height:auto!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="bg" aria-hidden="true"><i></i><i></i><i></i></div>
+
+<!-- ========== NAV ========== -->
+<header class="nav" id="nav">
+  <div class="navbar">
+    <a class="brand" href="#top">Nude<span>·</span>Divine</a>
+
+    <nav class="nav-links" aria-label="Hauptnavigation">
+    <a href="#behandlungen" data-de="Behandlungen" data-en="Treatments">Behandlungen</a>
+    <a href="#aquafacial" data-de="Aquafacial" data-en="Aquafacial">Aquafacial</a>
+    <a href="#ergebnisse" data-de="Ergebnisse" data-en="Results">Ergebnisse</a>
+    <a href="#ueber-mich" data-de="Über mich" data-en="About me">Über mich</a>
+    <a href="#boutique" data-de="Boutique" data-en="Boutique">Boutique</a>
+    <a href="#kontakt" data-de="Kontakt" data-en="Contact">Kontakt</a>
+    </nav>
+
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Sprache / Language">
+        <button type="button" data-lang="de" aria-pressed="true">DE</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn-primary" href="#kontakt" data-book data-de="Termin" data-en="Book">Termin</a>
+      <button class="burger" type="button" id="burger" aria-expanded="false" aria-controls="mobnav"
+              data-de-label="Menü öffnen" data-en-label="Open menu" aria-label="Menü öffnen">
+        <i></i><i></i><i></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobnav" id="mobnav">
+    <nav class="mobnav-card" aria-label="Hauptnavigation mobil">
+      <a href="#behandlungen" data-de="Behandlungen" data-en="Treatments">Behandlungen</a>
+      <a href="#aquafacial" data-de="Aquafacial" data-en="Aquafacial">Aquafacial</a>
+      <a href="#ergebnisse" data-de="Ergebnisse" data-en="Results">Ergebnisse</a>
+      <a href="#ueber-mich" data-de="Über mich" data-en="About me">Über mich</a>
+      <a href="#boutique" data-de="Boutique" data-en="Boutique">Boutique</a>
+      <a href="#kontakt" data-de="Kontakt" data-en="Contact">Kontakt</a>
+
+      <div class="mobnav-cta">
+        <a class="btn btn-primary" href="#kontakt" data-book data-de="Termin anfragen" data-en="Request appointment">Termin anfragen</a>
+      </div>
+
+      <div class="mobnav-foot">
+        <span data-de="Sprache" data-en="Language">Sprache</span>
+        <div class="lang" role="group" aria-label="Sprache / Language">
+          <button type="button" data-lang="de" aria-pressed="true">DE</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- ========== HAUTTÖNE-LEITER ========== -->
+<nav class="ladder" id="ladder" aria-label="Abschnitte">
+  <a href="#top"          data-tone="var(--t1)" style="--c:#F4DEC9"><span class="lbl" data-de="Start" data-en="Start">Start</span><span class="dot" aria-hidden="true"></span></a>
+  <a href="#behandlungen" data-tone="var(--t2)" style="--c:#E9C4A6"><span class="lbl" data-de="Behandlungen" data-en="Treatments">Behandlungen</span><span class="dot" aria-hidden="true"></span></a>
+  <a href="#aquafacial"   data-tone="var(--t3)" style="--c:#D8A382"><span class="lbl" data-de="Aquafacial" data-en="Aquafacial">Aquafacial</span><span class="dot" aria-hidden="true"></span></a>
+  <a href="#ergebnisse"   data-tone="var(--t4)" style="--c:#BB8163"><span class="lbl" data-de="Ergebnisse" data-en="Results">Ergebnisse</span><span class="dot" aria-hidden="true"></span></a>
+  <a href="#ueber-mich"   data-tone="var(--t5)" style="--c:#8F5D45"><span class="lbl" data-de="Über mich" data-en="About me">Über mich</span><span class="dot" aria-hidden="true"></span></a>
+  <a href="#kontakt"      data-tone="var(--t6)" style="--c:#5D392B"><span class="lbl" data-de="Kontakt" data-en="Contact">Kontakt</span><span class="dot" aria-hidden="true"></span></a>
+</nav>
+
+<main id="top">
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="hero-media" aria-hidden="true">
+    <div class="ph" style="--tone:var(--t2)"></div>
+    <video class="media" data-hero muted loop playsinline autoplay disablepictureinpicture
+           poster="fotos/hero.jpg" preload="metadata"
+           data-src-desktop="fotos/hero-16x9"
+           data-src-mobile="fotos/hero-9x16"></video>
+  </div>
+
+  <div class="wrap">
+    <div class="hero-copy">
+      <p class="eyebrow" data-de="Kosmetikstudio · Ketsch am Rhein" data-en="Beauty studio · Ketsch, Germany">Kosmetikstudio · Ketsch am Rhein</p>
+      <h1 class="display" id="h1">
+        <span class="ln"><span data-de="Haut," data-en="Skin">Haut,</span></span>
+        <span class="ln"><span data-de="die" data-en="that">die</span></span>
+        <span class="ln"><span class="ital" data-de="atmet." data-en="breathes.">atmet.</span></span>
+      </h1>
+      <p class="lead hero-sub" data-de="Manuelle Gesichts-Lymphdrainage, Aquafacial und Liftings. Ruhige Behandlungen mit sichtbarem Ergebnis — ein Termin, eine Person, volle Zeit." data-en="Manual facial lymphatic drainage, Aquafacial and lifting treatments. Calm sessions with visible results — one appointment, one guest, undivided time.">Manuelle Gesichts-Lymphdrainage, Aquafacial und Liftings. Ruhige Behandlungen mit sichtbarem Ergebnis — ein Termin, eine Person, volle Zeit.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#kontakt" data-book>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 11h18"/></svg>
+          <span data-de="Termin anfragen" data-en="Request an appointment">Termin anfragen</span>
+        </a>
+        <a class="btn btn-ghost" href="#behandlungen" data-de="Behandlungen ansehen" data-en="See treatments">Behandlungen ansehen</a>
+      </div>
+      <div class="hero-meta">
+        <span data-de="68775 Ketsch" data-en="68775 Ketsch">68775 Ketsch</span>
+        <span data-de="Nur nach Termin" data-en="By appointment only">Nur nach Termin</span>
+        <span data-de="Inhabergeführt · 1:1" data-en="Owner-run · one guest at a time">Inhabergeführt · 1:1</span>
+        <span>@nudedivinestudio</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="toneband-strip">
+  <div class="wrap">
+    <div class="toneband" aria-hidden="true">
+      <i style="background:#F4DEC9"></i><i style="background:#E9C4A6"></i><i style="background:#D8A382"></i>
+      <i style="background:#BB8163"></i><i style="background:#8F5D45"></i><i style="background:#5D392B"></i>
+    </div>
+    <p class="small" style="margin-top:.7rem" data-de="Jede Haut hat ihren Ton. Wir behandeln keinen Durchschnitt." data-en="Every skin has its own tone. We don’t treat an average.">Jede Haut hat ihren Ton. Wir behandeln keinen Durchschnitt.</p>
+  </div>
+</div>
+
+<!-- ========== STUDIO ========== -->
+<section class="sec sec--paper" id="studio" style="--tone:var(--t2)">
+  <div class="wrap">
+    <div class="studio rv">
+      <div class="ph wide"><img src="fotos/studio.webp" width="1200" height="900" loading="eager" decoding="async" alt="Behandlungsraum im Nude Divine Studio in Ketsch mit Liege, Leinentüchern und Tageslicht" data-de-alt="Behandlungsraum im Nude Divine Studio in Ketsch mit Liege, Leinentüchern und Tageslicht" data-en-alt="Treatment room at Nude Divine Studio in Ketsch with a bed, linen towels and daylight"></div>
+      <div>
+        <p class="eyebrow" data-de="Das Studio" data-en="The studio">Das Studio</p>
+        <h2 class="display" data-de="Kein Fließband.&lt;br&gt;Ein &lt;span class=&quot;ital&quot;&gt;Raum&lt;/span&gt; für dich." data-en="No conveyor belt.&lt;br&gt;One &lt;span class=&quot;ital&quot;&gt;room&lt;/span&gt; for you.">Kein Fließband.<br>Ein <span class="ital">Raum</span> für dich.</h2>
+        <p class="lead" style="margin-top:1.5rem" data-de="Nude Divine ist ein kleines Studio in Ketsch. Kein Wartezimmer, keine Parallelbehandlung. Wir schauen uns deine Haut an, bevor wir irgendetwas auftragen — und sagen ehrlich, wenn eine Behandlung gerade nicht die richtige ist." data-en="Nude Divine is a small studio in Ketsch. No waiting room, no parallel treatments. We look at your skin before applying anything — and we say so honestly when a treatment isn’t the right one right now.">Nude Divine ist ein kleines Studio in Ketsch. Kein Wartezimmer, keine Parallelbehandlung. Wir schauen uns deine Haut an, bevor wir irgendetwas auftragen — und sagen ehrlich, wenn eine Behandlung gerade nicht die richtige ist.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== BEHANDLUNGEN ========== -->
+<section class="sec" id="behandlungen" style="--tone:var(--t3)">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <p class="eyebrow" data-de="Behandlungen" data-en="Treatments">Behandlungen</p>
+        <h2 class="display" data-de="Was hier &lt;span class=&quot;ital&quot;&gt;gemacht&lt;/span&gt; wird" data-en="What happens &lt;span class=&quot;ital&quot;&gt;here&lt;/span&gt;">Was hier <span class="ital">gemacht</span> wird</h2>
+      </div>
+      <p class="lead" data-de="Gesicht, Kopfhaut, Augen. Alles einzeln buchbar, vieles sinnvoll kombinierbar — was zu dir passt, klären wir vorher im Gespräch." data-en="Face, scalp, eyes. Each bookable on its own, many of them worth combining — what suits you we settle in conversation first.">Gesicht, Kopfhaut, Augen. Alles einzeln buchbar, vieles sinnvoll kombinierbar — was zu dir passt, klären wir vorher im Gespräch.</p>
+    </div>
+
+    <div class="treatments rv">
+      <article class="tr"><span class="swatch" style="--c:#E9C4A6" aria-hidden="true"></span><div>
+        <h3 data-de="Gesichts-Lymphdrainage" data-en="Facial lymphatic drainage">Gesichts-Lymphdrainage</h3>
+        <p data-de="Manuelle Griffe entlang der Lymphbahnen. Entstaut das Gesicht, mildert Schwellungen um Augen und Kiefer, macht die Konturen wieder sichtbar." data-en="Manual strokes along the lymphatic pathways. Decongests the face, softens puffiness around eyes and jaw, brings contours back.">Manuelle Griffe entlang der Lymphbahnen. Entstaut das Gesicht, mildert Schwellungen um Augen und Kiefer, macht die Konturen wieder sichtbar.</p>
+        <div class="meta"><span>60 Min</span><span data-de="Preis auf Anfrage" data-en="Price on request">Preis auf Anfrage</span></div>
+      </div></article>
+
+      <article class="tr"><span class="swatch" style="--c:#D8A382" aria-hidden="true"></span><div>
+        <h3>Aquafacial</h3>
+        <p data-de="Reinigen, peelen, absaugen, aufbauen — in einem Durchgang, mit Wasser statt Reibung. Poren sichtbar frei, Haut sofort ruhiger. Ohne Ausfallzeit." data-en="Cleanse, exfoliate, extract, replenish — in one pass, with water instead of friction. Pores visibly clear, skin instantly calmer. No downtime.">Reinigen, peelen, absaugen, aufbauen — in einem Durchgang, mit Wasser statt Reibung. Poren sichtbar frei, Haut sofort ruhiger. Ohne Ausfallzeit.</p>
+        <div class="meta"><span>60 Min</span><span data-de="Preis auf Anfrage" data-en="Price on request">Preis auf Anfrage</span></div>
+      </div></article>
+
+      <article class="tr"><span class="swatch" style="--c:#BB8163" aria-hidden="true"></span><div>
+        <h3 data-de="Wimpern- &amp; Brauenlifting" data-en="Lash &amp; brow lift">Wimpern- &amp; Brauenlifting</h3>
+        <p data-de="Die eigenen Wimpern aufgerichtet, die Brauen in Form gelegt und fixiert. Sechs bis acht Wochen wacher Blick, ohne täglich etwas dafür zu tun." data-en="Your own lashes lifted, brows laid into shape and set. Six to eight weeks of an open gaze with nothing to do daily.">Die eigenen Wimpern aufgerichtet, die Brauen in Form gelegt und fixiert. Sechs bis acht Wochen wacher Blick, ohne täglich etwas dafür zu tun.</p>
+        <div class="meta"><span>60 Min</span><span data-de="Preis auf Anfrage" data-en="Price on request">Preis auf Anfrage</span></div>
+      </div></article>
+
+      <article class="tr"><span class="swatch" style="--c:#8F5D45" aria-hidden="true"></span><div>
+        <h3 data-de="Japanese Headspa" data-en="Japanese Headspa">Japanese Headspa</h3>
+        <p data-de="Kopfhautbehandlung im Liegen: warmes Wasser, langsame Massage, gereinigte Kopfhaut. Die meisten schlafen dabei ein — das ist kein Nebeneffekt, das ist der Punkt." data-en="A scalp treatment lying down: warm water, slow massage, a properly cleansed scalp. Most people fall asleep — that isn’t a side effect, that’s the point.">Kopfhautbehandlung im Liegen: warmes Wasser, langsame Massage, gereinigte Kopfhaut. Die meisten schlafen dabei ein — das ist kein Nebeneffekt, das ist der Punkt.</p>
+        <div class="meta"><span>45–75 Min</span><span data-de="Preis auf Anfrage" data-en="Price on request">Preis auf Anfrage</span></div>
+      </div></article>
+
+      <article class="tr"><span class="swatch" style="--c:#5D392B" aria-hidden="true"></span><div>
+        <h3 data-de="Wimpernverlängerung" data-en="Lash extensions">Wimpernverlängerung</h3>
+        <p data-de="Einzelne Härchen, an dein Auge angepasst — von kaum sichtbar bis voll. Neuauffüllung alle drei bis vier Wochen." data-en="Individual lashes, mapped to your eye — from barely there to full. Refills every three to four weeks.">Einzelne Härchen, an dein Auge angepasst — von kaum sichtbar bis voll. Neuauffüllung alle drei bis vier Wochen.</p>
+        <div class="meta"><span>90–120 Min</span><span data-de="Preis auf Anfrage" data-en="Price on request">Preis auf Anfrage</span></div>
+      </div></article>
+
+      <article class="tr"><span class="swatch" style="--c:#F4DEC9" aria-hidden="true"></span><div>
+        <h3 data-de="Brows &amp; Styling" data-en="Brows &amp; styling">Brows &amp; Styling</h3>
+        <p data-de="Brauen zupfen, färben, in Form bringen. Dazu Hochsteckfrisuren, Flechtfrisuren und Brautstyling auf Anfrage." data-en="Brows shaped, tinted and set. Plus updos, braids and bridal styling on request.">Brauen zupfen, färben, in Form bringen. Dazu Hochsteckfrisuren, Flechtfrisuren und Brautstyling auf Anfrage.</p>
+        <div class="meta"><span>45 Min</span><span data-de="Preis auf Anfrage" data-en="Price on request">Preis auf Anfrage</span></div>
+      </div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== AQUAFACIAL / RITUAL ========== -->
+<section class="sec sec--deep" id="aquafacial" style="--tone:var(--t4)">
+  <div class="wrap">
+    <div class="ritual rv">
+      <p class="eyebrow" data-de="Im Detail" data-en="In detail">Im Detail</p>
+      <h2 class="display" data-de="Aquafacial —&lt;br&gt;vier Schritte, &lt;span class=&quot;ital&quot;&gt;eine&lt;/span&gt; Stunde" data-en="Aquafacial —&lt;br&gt;four steps, &lt;span class=&quot;ital&quot;&gt;one&lt;/span&gt; hour">Aquafacial —<br>vier Schritte, <span class="ital">eine</span> Stunde</h2>
+      <p class="lead" style="margin-top:1.2rem" data-de="Die Behandlung, nach der am häufigsten gefragt wird. Hier steht, was tatsächlich passiert." data-en="The treatment people ask about most. Here is what actually happens.">Die Behandlung, nach der am häufigsten gefragt wird. Hier steht, was tatsächlich passiert.</p>
+      <div class="steps">
+        <div class="step"><span class="n">01</span><b data-de="Reinigen" data-en="Cleanse">Reinigen</b><p data-de="Make-up, Talg und Tagesreste runter. Erst danach beurteilen wir die Haut." data-en="Make-up, sebum and the day come off. Only then do we read the skin.">Make-up, Talg und Tagesreste runter. Erst danach beurteilen wir die Haut.</p></div>
+        <div class="step"><span class="n">02</span><b data-de="Peelen" data-en="Exfoliate">Peelen</b><p data-de="Milde Säurelösung löst abgestorbene Zellen — ohne Körnung, ohne Kratzen." data-en="A mild acid solution loosens dead cells — no grit, no scrubbing.">Milde Säurelösung löst abgestorbene Zellen — ohne Körnung, ohne Kratzen.</p></div>
+        <div class="step"><span class="n">03</span><b data-de="Absaugen" data-en="Extract">Absaugen</b><p data-de="Vakuum zieht Mitesser aus den Poren. Das ist der Teil, den man auf Instagram sieht." data-en="Vacuum lifts blackheads out of the pores. This is the part you see on Instagram.">Vakuum zieht Mitesser aus den Poren. Das ist der Teil, den man auf Instagram sieht.</p></div>
+        <div class="step"><span class="n">04</span><b data-de="Aufbauen" data-en="Replenish">Aufbauen</b><p data-de="Seren mit Hyaluron und Antioxidantien gehen in die offene Haut. Danach direkt gesellschaftsfähig." data-en="Serums with hyaluronic acid and antioxidants go into open skin. You can go straight back out afterwards.">Seren mit Hyaluron und Antioxidantien gehen in die offene Haut. Danach direkt gesellschaftsfähig.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ERGEBNISSE ========== -->
+<section class="sec" id="ergebnisse" style="--tone:var(--t3)">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <p class="eyebrow" data-de="Ergebnisse" data-en="Results">Ergebnisse</p>
+        <h2 class="display" data-de="Vorher, &lt;span class=&quot;ital&quot;&gt;nachher&lt;/span&gt;" data-en="Before, &lt;span class=&quot;ital&quot;&gt;after&lt;/span&gt;">Vorher, <span class="ital">nachher</span></h2>
+      </div>
+      <div>
+        <p class="lead" data-de="Echte Termine, echtes Licht, kein Filter." data-en="Real appointments, real light, no filter.">Echte Termine, echtes Licht, kein Filter.</p>
+        <a class="btn btn-ghost" style="margin-top:1.4rem" href="https://www.instagram.com/nudedivinestudio/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          <span data-ig-label data-de="{followers} folgen auf Instagram" data-en="{followers} follow on Instagram">1.888 folgen auf Instagram</span>
+        </a>
+      </div>
+    </div>
+    <div class="gal rv">
+      <div class="ph"><img src="fotos/ergebnis-1.webp" width="800" height="1334" loading="lazy" decoding="async" alt="Manuelle Gesichts-Lymphdrainage am Wangenknochen" data-de-alt="Manuelle Gesichts-Lymphdrainage am Wangenknochen" data-en-alt="Manual facial lymphatic drainage along the cheekbone"></div>
+      <div class="ph sq"><img src="fotos/ergebnis-2.webp" width="900" height="900" loading="lazy" decoding="async" alt="Aquafacial: Applikator gleitet über die feuchte Haut" data-de-alt="Aquafacial: Applikator gleitet über die feuchte Haut" data-en-alt="Aquafacial: applicator gliding over damp skin"></div>
+      <div class="ph sq"><img src="fotos/ergebnis-3.webp" width="900" height="900" loading="lazy" decoding="async" alt="Frisch in Form gebrachte Augenbraue nach dem Brauenlifting" data-de-alt="Frisch in Form gebrachte Augenbraue nach dem Brauenlifting" data-en-alt="Freshly shaped brow after a brow lift"></div>
+      <div class="ph"><img src="fotos/ergebnis-4.webp" width="800" height="1334" loading="lazy" decoding="async" alt="Wimpernverlängerung am geschlossenen Auge" data-de-alt="Wimpernverlängerung am geschlossenen Auge" data-en-alt="Lash extensions on a closed eye"></div>
+      <div class="ph sq"><img src="fotos/ergebnis-5.webp" width="900" height="900" loading="lazy" decoding="async" alt="Japanese Headspa: warmes Wasser über der Kopfhaut" data-de-alt="Japanese Headspa: warmes Wasser über der Kopfhaut" data-en-alt="Japanese Headspa: warm water over the scalp"></div>
+      <div class="ph sq"><img src="fotos/ergebnis-6.webp" width="900" height="900" loading="lazy" decoding="async" alt="Serum und Leinentuch im Studio" data-de-alt="Serum und Leinentuch im Studio" data-en-alt="Serum and linen towel in the studio"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ÜBER MICH ========== -->
+<section class="sec sec--paper" id="ueber-mich" style="--tone:var(--t5)">
+  <div class="wrap">
+    <div class="about rv">
+      <div class="ph tall"><img src="fotos/ueber-mich.webp" width="900" height="1200" loading="lazy" decoding="async" alt="Inhaberin von Nude Divine im Studio in Ketsch" data-de-alt="Inhaberin von Nude Divine im Studio in Ketsch" data-en-alt="Owner of Nude Divine in her studio in Ketsch"></div>
+      <div>
+        <p class="eyebrow" data-de="Hinter dem Studio" data-en="Behind the studio">Hinter dem Studio</p>
+        <h2 class="display" data-de="Wer dich&lt;br&gt;&lt;span class=&quot;ital&quot;&gt;behandelt&lt;/span&gt;" data-en="Who&lt;br&gt;&lt;span class=&quot;ital&quot;&gt;treats you&lt;/span&gt;">Wer dich<br><span class="ital">behandelt</span></h2>
+
+        <p class="lead" style="margin-top:1.5rem" data-de="Nude Divine ist mein Studio — und ich stehe hier selbst am Behandlungsstuhl. Kein Team im Hintergrund, keine wechselnden Hände: Wer einen Termin bei mir hat, wird von mir behandelt." data-en="Nude Divine is my studio — and I am the one standing at the chair. No team in the back, no changing hands: if you have an appointment with me, I am the one treating you.">Nude Divine ist mein Studio — und ich stehe hier selbst am Behandlungsstuhl. Kein Team im Hintergrund, keine wechselnden Hände: Wer einen Termin bei mir hat, wird von mir behandelt.</p>
+
+        <p style="margin-top:1.2rem" data-de="Mir ist wichtig, dass du weißt, was mit deiner Haut passiert. Deshalb erkläre ich jeden Schritt, bevor ich ihn mache, und arbeite mit einem Druck, den du bestimmst. Und deshalb dauert eine Behandlung hier länger als anderswo." data-en="It matters to me that you know what is happening to your skin. So I explain every step before I take it, and I work at a pressure you set. That is also why a treatment here takes longer than elsewhere.">Mir ist wichtig, dass du weißt, was mit deiner Haut passiert. Deshalb erkläre ich jeden Schritt, bevor ich ihn mache, und arbeite mit einem Druck, den du bestimmst. Und deshalb dauert eine Behandlung hier länger als anderswo.</p>
+
+        <ul class="promises">
+          <li data-de="Ich nehme mir die Zeit, die deine Haut braucht — nicht die, die in den Kalender passt." data-en="I take the time your skin needs — not the time that fits the calendar.">Ich nehme mir die Zeit, die deine Haut braucht — nicht die, die in den Kalender passt.</li>
+          <li data-de="Ich sage dir ehrlich, wenn eine Behandlung heute nicht sinnvoll ist." data-en="I tell you honestly when a treatment doesn’t make sense today.">Ich sage dir ehrlich, wenn eine Behandlung heute nicht sinnvoll ist.</li>
+          <li data-de="Am Ende steht kein Verkaufsgespräch. Nur zwei, drei Empfehlungen für zu Hause." data-en="There is no sales pitch at the end. Just two or three recommendations for home.">Am Ende steht kein Verkaufsgespräch. Nur zwei, drei Empfehlungen für zu Hause.</li>
+        </ul>
+
+        <p class="sig">
+          <b>Nude Divine</b>
+          <span data-de="Inhaberin · Ketsch am Rhein" data-en="Owner · Ketsch, Germany">Inhaberin · Ketsch am Rhein</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== BOUTIQUE ========== -->
+<section class="sec" id="boutique" style="--tone:var(--t5)">
+  <div class="wrap">
+    <div class="boutique rv">
+      <div>
+        <p class="eyebrow" data-de="Boutique" data-en="Boutique">Boutique</p>
+        <h2 class="display" data-de="Kleidung &amp;&lt;br&gt;&lt;span class=&quot;ital&quot;&gt;Accessoires&lt;/span&gt;" data-en="Clothes &amp;&lt;br&gt;&lt;span class=&quot;ital&quot;&gt;accessories&lt;/span&gt;">Kleidung &amp;<br><span class="ital">Accessoires</span></h2>
+        <p class="lead" style="margin-top:1.4rem" data-de="Im Studio hängt eine kleine, handverlesene Auswahl: Teile, die wir selbst tragen würden, in überschaubarer Stückzahl. Neue Drops zeigen wir zuerst auf Instagram — dort auch reservieren." data-en="A small hand-picked rail lives in the studio: pieces we would wear ourselves, in limited numbers. New drops go up on Instagram first — and can be reserved there.">Im Studio hängt eine kleine, handverlesene Auswahl: Teile, die wir selbst tragen würden, in überschaubarer Stückzahl. Neue Drops zeigen wir zuerst auf Instagram — dort auch reservieren.</p>
+        <a class="btn btn-ghost" style="margin-top:1.8rem" href="https://www.instagram.com/nudedivinestudio/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          <span data-de="Drops auf Instagram" data-en="Drops on Instagram">Drops auf Instagram</span>
+        </a>
+
+        <div class="gut">
+          <b data-de="Gutscheine" data-en="Gift vouchers">Gutscheine</b>
+          <p data-de="Für Geburtstage, Muttertag oder einfach so — Betrag frei wählbar, einlösbar für jede Behandlung und für alles im Studio. Anfrage per Nachricht, Ausstellung am selben Tag." data-en="For birthdays, Mother’s Day or no reason at all — any amount, redeemable for every treatment and everything in the studio. Ask by message, issued the same day.">Für Geburtstage, Muttertag oder einfach so — Betrag frei wählbar, einlösbar für jede Behandlung und für alles im Studio. Anfrage per Nachricht, Ausstellung am selben Tag.</p>
+        </div>
+      </div>
+      <div class="ph wide"><img src="fotos/boutique.webp" width="1200" height="900" loading="lazy" decoding="async" alt="Kleiderstange mit handverlesener Auswahl im Studio" data-de-alt="Kleiderstange mit handverlesener Auswahl im Studio" data-en-alt="Clothing rail with a hand-picked selection in the studio"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section class="sec sec--paper" id="faq" style="--tone:var(--t4)">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <p class="eyebrow" data-de="Gut zu wissen" data-en="Good to know">Gut zu wissen</p>
+        <h2 class="display" data-de="Fragen &lt;span class=&quot;ital&quot;&gt;vorab&lt;/span&gt;" data-en="Questions &lt;span class=&quot;ital&quot;&gt;first&lt;/span&gt;">Fragen <span class="ital">vorab</span></h2>
+      </div>
+    </div>
+    <div class="faq rv">
+      <details><summary data-de="Wie buche ich einen Termin?" data-en="How do I book?">Wie buche ich einen Termin?</summary><div class="faq-body"><div><p data-de="Über das Kontaktformular unten, per WhatsApp oder als Direktnachricht auf Instagram. Antwort in der Regel am selben Tag." data-en="Through the contact section below, on WhatsApp, or by direct message on Instagram. Usually answered the same day.">Über das Kontaktformular unten, per WhatsApp oder als Direktnachricht auf Instagram. Antwort in der Regel am selben Tag.</p></div></div></details>
+      <details><summary data-de="Ist Aquafacial auch für empfindliche Haut geeignet?" data-en="Is Aquafacial suitable for sensitive skin?">Ist Aquafacial auch für empfindliche Haut geeignet?</summary><div class="faq-body"><div><p data-de="In den meisten Fällen ja — die Intensität der Wirkstofflösungen wird angepasst. Bei akuter Rosacea, offenen Stellen oder frischen Eingriffen verschieben wir den Termin lieber." data-en="In most cases yes — the strength of the solutions is adjusted. With active rosacea, open lesions or recent procedures we would rather move the appointment.">In den meisten Fällen ja — die Intensität der Wirkstofflösungen wird angepasst. Bei akuter Rosacea, offenen Stellen oder frischen Eingriffen verschieben wir den Termin lieber.</p></div></div></details>
+      <details><summary data-de="Wie oft sollte ich kommen?" data-en="How often should I come?">Wie oft sollte ich kommen?</summary><div class="faq-body"><div><p data-de="Für sichtbare Hautveränderung: alle vier bis sechs Wochen. Lymphdrainage wirkt auch als Einzeltermin, in Serie aber deutlich länger. Wimpernauffüllung alle drei bis vier Wochen." data-en="For visible change in the skin: every four to six weeks. Lymphatic drainage works as a single session, but holds far longer in a series. Lash refills every three to four weeks.">Für sichtbare Hautveränderung: alle vier bis sechs Wochen. Lymphdrainage wirkt auch als Einzeltermin, in Serie aber deutlich länger. Wimpernauffüllung alle drei bis vier Wochen.</p></div></div></details>
+      <details><summary data-de="Kann ich Behandlungen kombinieren?" data-en="Can I combine treatments?">Kann ich Behandlungen kombinieren?</summary><div class="faq-body"><div><p data-de="Ja. Beliebt ist Aquafacial plus Lymphdrainage im selben Termin, oder Headspa im Anschluss an eine Gesichtsbehandlung. Sag es bei der Anfrage dazu, damit genug Zeit eingeplant wird." data-en="Yes. Aquafacial plus lymphatic drainage in one appointment is a favourite, as is a Headspa after a facial. Mention it when you enquire so enough time is set aside.">Ja. Beliebt ist Aquafacial plus Lymphdrainage im selben Termin, oder Headspa im Anschluss an eine Gesichtsbehandlung. Sag es bei der Anfrage dazu, damit genug Zeit eingeplant wird.</p></div></div></details>
+      <details><summary data-de="Was, wenn ich absagen muss?" data-en="What if I need to cancel?">Was, wenn ich absagen muss?</summary><div class="faq-body"><div><p data-de="Bis 24 Stunden vorher kostenfrei. Danach wird der Termin berechnet — das Studio arbeitet mit einer Person und der Platz bleibt sonst leer." data-en="Free of charge up to 24 hours ahead. After that the appointment is charged — the studio runs on one pair of hands and the slot would otherwise stay empty.">Bis 24 Stunden vorher kostenfrei. Danach wird der Termin berechnet — das Studio arbeitet mit einer Person und der Platz bleibt sonst leer.</p></div></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ========== KONTAKT ========== -->
+<section class="sec sec--deep" id="kontakt" style="--tone:var(--t6)">
+  <div class="wrap">
+    <div class="contact rv">
+      <div class="cinfo">
+        <p class="eyebrow" data-de="Kontakt" data-en="Contact">Kontakt</p>
+        <h2 class="display" data-de="Schreib uns,&lt;br&gt;&lt;span class=&quot;ital&quot;&gt;wir melden uns&lt;/span&gt;" data-en="Write to us,&lt;br&gt;&lt;span class=&quot;ital&quot;&gt;we’ll reply&lt;/span&gt;">Schreib uns,<br><span class="ital">wir melden uns</span></h2>
+        <dl>
+          <div><dt data-de="Adresse" data-en="Address">Adresse</dt><dd>Schwetzinger Straße 12, 68775 Ketsch</dd></div>
+          <div><dt data-de="Anfahrt" data-en="Getting here">Anfahrt</dt><dd data-de="10 Minuten von Schwetzingen, 20 von Mannheim. Parken direkt in der Straße." data-en="10 minutes from Schwetzingen, 20 from Mannheim. Parking right on the street.">10 Minuten von Schwetzingen, 20 von Mannheim. Parken direkt in der Straße.</dd></div>
+          <div><dt data-de="Nachricht" data-en="Message">Nachricht</dt><dd><a href="https://wa.me/4900000000000" target="_blank" rel="noopener" data-de="Über WhatsApp schreiben" data-en="Write on WhatsApp">Über WhatsApp schreiben</a></dd></div>
+          <div><dt data-de="E-Mail" data-en="Email">E-Mail</dt><dd><a href="mailto:hallo@nudedivine.de">hallo@nudedivine.de</a></dd></div>
+          <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/nudedivinestudio/" target="_blank" rel="noopener">@nudedivinestudio</a></dd></div>
+        </dl>
+        <div style="margin-top:2rem">
+          <p class="eyebrow" data-de="Öffnungszeiten" data-en="Opening hours">Öffnungszeiten</p>
+          <div class="hours">
+            <div><span data-de="Dienstag – Freitag" data-en="Tuesday – Friday">Dienstag – Freitag</span><span>09:00 – 18:00</span></div>
+            <div><span data-de="Samstag" data-en="Saturday">Samstag</span><span>09:00 – 14:00</span></div>
+            <div><span data-de="Sonntag &amp; Montag" data-en="Sunday &amp; Monday">Sonntag &amp; Montag</span><span data-de="geschlossen" data-en="closed">geschlossen</span></div>
+          </div>
+          <p class="small" style="margin-top:.9rem" data-de="Termine auch außerhalb der Zeiten — frag einfach nach." data-en="Appointments outside these hours are possible — just ask.">Termine auch außerhalb der Zeiten — frag einfach nach.</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="ph wide" style="margin-bottom:1.5rem"><img src="fotos/kontakt.webp" width="1200" height="900" loading="lazy" decoding="async" alt="Eingang des Nude Divine Studios in Ketsch" data-de-alt="Eingang des Nude Divine Studios in Ketsch" data-en-alt="Entrance to Nude Divine Studio in Ketsch"></div>
+        <div style="display:flex;flex-direction:column;gap:.7rem">
+          <a class="btn btn-primary" href="https://wa.me/4900000000000" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.2 7.9L3 21l1.2-4.6A9 9 0 1 1 21 12z"/></svg>
+            <span data-de="Termin über WhatsApp" data-en="Book via WhatsApp">Termin über WhatsApp</span>
+          </a>
+          <a class="btn btn-ghost" href="https://www.instagram.com/nudedivinestudio/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+            <span data-de="Direktnachricht auf Instagram" data-en="Direct message on Instagram">Direktnachricht auf Instagram</span>
+          </a>
+          <a class="btn btn-ghost" href="mailto:hallo@nudedivine.de">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            <span data-de="E-Mail schreiben" data-en="Send an email">E-Mail schreiben</span>
+          </a>
+        </div>
+        <p class="small" style="margin-top:1.2rem" data-de="Anfragen werden in der Regel am selben Tag beantwortet." data-en="Enquiries are usually answered the same day.">Anfragen werden in der Regel am selben Tag beantwortet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap fgrid">
+    <span>© <span id="yr">2026</span> Nude Divine Studio · Ketsch</span>
+    <span style="display:flex;gap:1.5rem">
+      <a href="#" data-de="Impressum" data-en="Legal notice">Impressum</a>
+      <a href="#" data-de="Datenschutz" data-en="Privacy">Datenschutz</a>
+    </span>
+    <span data-de="Richtung A · Haut" data-en="Direction A · Skin">Richtung A · Haut</span>
+  </div>
+</footer>
+
+<div class="mobar">
+  <a class="btn btn-ghost" href="https://www.instagram.com/nudedivinestudio/" target="_blank" rel="noopener">Instagram</a>
+  <a class="btn btn-primary" href="#kontakt" data-book data-de="Termin anfragen" data-en="Book now">Termin anfragen</a>
+</div>
+
+<!-- ========== SPRACHWECHSEL ========== -->
+<div class="veil" id="veil" aria-hidden="true">
+  <div class="veil-in">
+    <span class="veil-word">Nude · Divine</span>
+    <span class="veil-bar"><i></i></span>
+  </div>
+</div>
+
+<!-- ========== MODAL: TERMIN ========== -->
+<div class="modal" id="book">
+  <div class="modal-bg" data-close></div>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="bookTitle">
+    <button class="modal-x" type="button" data-close data-de-label="Schließen" data-en-label="Close" aria-label="Schließen">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <p class="eyebrow" data-de="Termin" data-en="Booking">Termin</p>
+    <h2 class="display" id="bookTitle" data-de="Wie möchtest du &lt;span class=&quot;ital&quot;&gt;schreiben&lt;/span&gt;?" data-en="How would you like to &lt;span class=&quot;ital&quot;&gt;write&lt;/span&gt;?">Wie möchtest du <span class="ital">schreiben</span>?</h2>
+    <p class="lead" data-de="Schreib kurz, was dich stört und wann du Zeit hast. Antwort in der Regel am selben Tag." data-en="Tell us briefly what bothers you and when you are free. Usually answered the same day.">Schreib kurz, was dich stört und wann du Zeit hast. Antwort in der Regel am selben Tag.</p>
+
+    <div class="modal-opts">
+      <a class="opt" href="https://wa.me/4900000000000" target="_blank" rel="noopener" style="--c:#E9C4A6">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 12a9 9 0 0 1-13.2 7.9L3 21l1.2-4.6A9 9 0 1 1 21 12z"/></svg></span>
+        <span><b>WhatsApp</b><span data-de="Meist innerhalb weniger Stunden" data-en="Usually within a few hours">Meist innerhalb weniger Stunden</span></span>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
+      <a class="opt" href="https://ig.me/m/nudedivinestudio" target="_blank" rel="noopener" style="--c:#D8A382">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></span>
+        <span><b>Instagram DM</b><span data-de="Direktnachricht an @nudedivinestudio" data-en="Direct message to @nudedivinestudio">Direktnachricht an @nudedivinestudio</span></span>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
+      <a class="opt" href="mailto:hallo@nudedivine.de" style="--c:#F4DEC9">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+        <span><b>E-Mail</b><span>hallo@nudedivine.de</span></span>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
+      <a class="opt" href="tel:+4900000000000" style="--c:#BB8163">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1.1 1A16 16 0 0 1 4 5.1 1 1 0 0 1 5 4z"/></svg></span>
+        <span><b data-de="Anrufen" data-en="Call">Anrufen</b><span data-de="Dienstag bis Samstag während der Öffnungszeiten" data-en="Tuesday to Saturday during opening hours">Dienstag bis Samstag während der Öffnungszeiten</span></span>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <p class="modal-foot" data-de="Schwetzinger Straße 12, 68775 Ketsch · Behandlung nur nach Termin" data-en="Schwetzinger Straße 12, 68775 Ketsch · by appointment only">Schwetzinger Straße 12, 68775 Ketsch · Behandlung nur nach Termin</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var lang = "de";
+
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---- Hero-Video: Querformat am Desktop, Hochformat am Telefon ---- */
+  (function(){
+    var v = document.querySelector("video[data-hero]");
+    if(!v) return;
+    var wide = window.matchMedia("(min-width: 960px)").matches;
+    var base = wide ? v.dataset.srcDesktop : v.dataset.srcMobile;
+    if(!base){ v.remove(); return; }
+
+    [["webm","video/webm"], ["mp4","video/mp4"]].forEach(function(f){
+      var s = document.createElement("source");
+      s.src = base + "." + f[0];
+      s.type = f[1];
+      v.appendChild(s);
+    });
+
+    /* nur aufgeben, wenn keine der Quellen spielbar ist */
+    v.addEventListener("error", function(){ v.remove(); });
+
+    /* iOS im Stromsparmodus und einige Android-Browser blockieren Autoplay.
+       Deshalb mehrfach versuchen: sobald Daten da sind, und beim ersten Antippen. */
+    function tryPlay(){
+      if(!v.paused) return;
+      var p = v.play();
+      if(p && p.catch) p.catch(function(){ /* Poster bleibt stehen, kein Fehler */ });
+    }
+    v.addEventListener("loadeddata", tryPlay);
+    v.addEventListener("canplay", tryPlay);
+
+    ["touchstart","pointerdown","scroll","keydown"].forEach(function(ev){
+      window.addEventListener(ev, tryPlay, { once:true, passive:true });
+    });
+    document.addEventListener("visibilitychange", function(){
+      if(!document.hidden) tryPlay();
+    });
+
+    v.load();
+    tryPlay();
+  })();
+
+  /* ---- Instagram-Follower: taglich aus followers.json ---- */
+  var igCount = 1888;                     /* Rueckfall, falls die Datei fehlt */
+  function renderIG(){
+    var n = new Intl.NumberFormat(lang === "de" ? "de-DE" : "en-US").format(igCount);
+    document.querySelectorAll("[data-ig-label]").forEach(function(el){
+      var tpl = lang === "de" ? el.dataset.de : el.dataset.en;
+      el.innerHTML = tpl.replace("{followers}", n);
+    });
+  }
+  fetch("followers.json?d=" + new Date().toISOString().slice(0, 10), { cache: "no-store" })
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(d){
+      if(d && typeof d.followers === "number" && d.followers > 0){ igCount = d.followers; renderIG(); }
+    })
+    .catch(function(){ /* offline oder lokal geoeffnet - Rueckfallwert bleibt stehen */ });
+
+  /* ---- Sprache: Schleier zwischen den Fassungen ---- */
+  var nodes = document.querySelectorAll("[data-de][data-en]");
+  var veil = document.getElementById("veil");
+  var switching = false;
+
+  function setLang(l){
+    lang = l;
+    document.documentElement.lang = l;
+    nodes.forEach(function(n){ n.innerHTML = l === "de" ? n.dataset.de : n.dataset.en; });
+    document.querySelectorAll("[data-de-label][data-en-label]").forEach(function(n){
+      n.setAttribute("aria-label", l === "de" ? n.dataset.deLabel : n.dataset.enLabel);
+    });
+    document.querySelectorAll("img[data-de-alt][data-en-alt]").forEach(function(n){
+      n.alt = l === "de" ? n.dataset.deAlt : n.dataset.enAlt;
+    });
+    document.querySelectorAll(".lang button").forEach(function(b){
+      b.setAttribute("aria-pressed", String(b.dataset.lang === l));
+    });
+    renderIG();
+  }
+
+  function switchLang(l){
+    if(l === lang || switching) return;
+    if(reduce){ setLang(l); return; }
+    switching = true;
+    document.body.setAttribute("aria-busy", "true");
+    veil.classList.add("on");
+    setTimeout(function(){ setLang(l); }, 340);
+    setTimeout(function(){
+      veil.classList.remove("on");
+      document.body.removeAttribute("aria-busy");
+      switching = false;
+    }, 830);
+  }
+
+  document.querySelectorAll(".lang button").forEach(function(b){
+    b.addEventListener("click", function(){ switchLang(b.dataset.lang); });
+  });
+  renderIG();
+
+  /* ---- Modal: Termin ---- */
+  var modal = document.getElementById("book");
+  var lastFocus = null;
+
+  function openModal(){
+    lastFocus = document.activeElement;
+    modal.classList.add("on");
+    document.body.style.overflow = "hidden";
+    setTimeout(function(){ modal.querySelector(".opt").focus(); }, 120);
+  }
+  function closeModal(){
+    modal.classList.remove("on");
+    document.body.style.overflow = "";
+    if(lastFocus) lastFocus.focus();
+  }
+  document.querySelectorAll("[data-book]").forEach(function(b){
+    b.addEventListener("click", function(e){ e.preventDefault(); openModal(); });
+  });
+  modal.querySelectorAll("[data-close]").forEach(function(b){
+    b.addEventListener("click", closeModal);
+  });
+  document.addEventListener("keydown", function(e){
+    if(!modal.classList.contains("on")) return;
+    if(e.key === "Escape"){ closeModal(); return; }
+    if(e.key !== "Tab") return;
+    var f = modal.querySelectorAll("a[href], button:not([disabled])");
+    var first = f[0], last = f[f.length - 1];
+    if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+    else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+  });
+
+  /* ---- FAQ: weiches Auf und Zu ---- */
+  var FAQ_MS = 420;
+  document.querySelectorAll(".faq details").forEach(function(d){
+    var sum = d.querySelector("summary");
+    var body = d.querySelector(".faq-body");
+    if(!body) return;
+
+    sum.addEventListener("click", function(e){
+      if(reduce) return;
+      e.preventDefault();
+      if(d.dataset.busy === "1") return;
+      d.dataset.busy = "1";
+
+      var opening = !d.open;
+      if(opening) d.open = true;
+
+      var full = body.scrollHeight + "px";
+      body.style.height = opening ? "0px" : full;
+      void body.offsetHeight;                     /* Reflow erzwingen */
+      body.style.height = opening ? full : "0px";
+
+      setTimeout(function(){
+        if(opening){ body.style.height = "auto"; }
+        else { d.open = false; body.style.height = ""; }
+        d.dataset.busy = "";
+      }, FAQ_MS);
+    });
+  });
+
+  /* ---- Nav-Hintergrund ---- */
+  var nav = document.getElementById("nav");
+  var burger = document.getElementById("burger");
+  var mobnav = document.getElementById("mobnav");
+
+  function setMenu(open){
+    burger.setAttribute("aria-expanded", String(open));
+    mobnav.classList.toggle("open", open);
+  }
+  burger.addEventListener("click", function(){
+    setMenu(burger.getAttribute("aria-expanded") !== "true");
+  });
+  mobnav.querySelectorAll("a").forEach(function(a){
+    a.addEventListener("click", function(){ setMenu(false); });
+  });
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape" && burger.getAttribute("aria-expanded") === "true"){ setMenu(false); burger.focus(); }
+  });
+  document.addEventListener("click", function(e){
+    if(burger.getAttribute("aria-expanded") !== "true") return;
+    if(nav.contains(e.target)) return;
+    setMenu(false);
+  });
+
+  function onScroll(){ nav.classList.toggle("stuck", window.scrollY > 24); }
+  onScroll(); window.addEventListener("scroll", onScroll, {passive:true});
+
+  /* ---- Scroll-Reveal ---- */
+  var reveal = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      /* auch aufdecken, was beim Sprung über einen Anker oben aus dem Bild fiel */
+      if(e.isIntersecting || e.boundingClientRect.top < 0){
+        e.target.classList.add("in"); reveal.unobserve(e.target);
+      }
+    });
+  }, {rootMargin:"0px 0px -12% 0px", threshold:.08});
+  document.querySelectorAll(".rv").forEach(function(el){ reveal.observe(el); });
+
+  /* ---- Hauttöne-Leiter: aktive Sektion + Tonwechsel ---- */
+  var links = Array.prototype.slice.call(document.querySelectorAll(".ladder a"));
+  var targets = links.map(function(a){ return document.querySelector(a.getAttribute("href")); });
+  var spy = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var i = targets.indexOf(e.target);
+      links.forEach(function(a,j){ a.setAttribute("aria-current", String(j === i)); });
+    });
+  }, {rootMargin:"-45% 0px -45% 0px"});
+  targets.forEach(function(t){ if(t) spy.observe(t); });
+
+  document.getElementById("yr").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
